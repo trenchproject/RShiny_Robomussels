@@ -1,29 +1,77 @@
 library(leaflet)
 
-# Use a fluid Bootstrap layout
-fluidPage(    
+#--------
+# Define UI 
+shinyUI(
   
-  # Give the page a title
-  titlePanel("Climate Biology"),
-  
-  # Generate a row with a sidebar
-  sidebarLayout(      
+  # Define UI
+  fluidPage(  
+    title = "Roobomussel temperatures",
+    fluidRow(
+      column(12,
+             includeMarkdown("include.md")
+      )),
     
-    # Define the sidebar with one input
-    sidebarPanel(
-      checkboxGroupInput("sites", "Sites:", 
-                  choices=unique(te.max$location),
-                  selected = unique(te.max$location)[1]),
-      hr(),
-      helpText("Data from Helmuth et. al."), 
-      hr(), 
-      leafletOutput('map')
+    # Select sites and map
+    fluidRow(
+    sidebarLayout(      
+      
+      # Define the sidebar with one input
+      sidebarPanel(
+        checkboxGroupInput("sites", "Sites:", 
+                           choices=unique(te.max$location),
+                           selected = unique(te.max$location)[1])
+      ),
+      
+      # Create a spot for ggplot
+      mainPanel(
+        leafletOutput('map') 
+      )
+      ) #end sidebar
     ),
     
-    # Create a spot for ggplot
-    mainPanel(
-      plotOutput("climbPlot", height="800px")  
+    hr(),
+      fluidRow(
+        column(12,
+               includeMarkdown("include2.md")
+        )),
+    
+    hr(),
+    fluidRow(
+      mainPanel(
+        plotOutput("climbPlot", height="800px")  
+      )),
+      
+      hr(),
+      fluidRow(
+        column(12,
+               includeMarkdown("include3.md")
+        )),
+    
+    hr(),
+    fluidRow(
+      mainPanel(
+        plotOutput("ampPlot", height="800px")  
+      )),
+    
+    hr(),
+    fluidRow(
+      column(12,
+             includeMarkdown("include4.md")
+      )),
+    
+    hr(),
+    fluidRow(
+      mainPanel(
+        plotOutput("quiltPlot", height="800px")  
+      )),
+    
+    hr(),
+    fluidRow(
+      column(12,
+             includeMarkdown("include5.md")
+      ))
     )
     
-  )
-)
+) #end shiny ui
+    

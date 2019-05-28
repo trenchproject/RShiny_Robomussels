@@ -51,6 +51,7 @@ shinyServer(function(input, output) {
       ) %>% addCircleMarkers(data = points())
   })
   
+  #times series plot
   output$climbPlot <- renderPlot({
     
     ggplot(data=theseSites(), aes(x=doy, y = MaxTemp_C, color=subsite))+geom_line(alpha=0.8) +
@@ -58,4 +59,48 @@ shinyServer(function(input, output) {
     
   })
   
+ 
+  #fourier series plot
+  sites.sel= reactive(theseSites()[,c('site')])
+  powSites = reactive(pow)   #reactive(subset(pow, pow$site %in% sites.sel )) ###fix subsets
+  
+   output$ampPlot <- renderPlot({
+    
+    ggplot(data=powSites(), aes(x=log(freq), y = log(cyc_range/2) ))+geom_line(alpha=0.8, aes(color=subsite)) +theme_classic()+ guides(color=FALSE, size=FALSE)+ facet_wrap(~labs, nrow=1)+
+      geom_vline(xintercept=-2.639, color="gray")+geom_vline(xintercept=-1.946, color="gray")+geom_vline(xintercept=-3.40, color="gray")+geom_vline(xintercept=-5.9, color="gray")+
+      labs(x = "log (frequency) (1/days)",y="log (amplitude)")+
+      annotate(geom="text", x=-2.1, y=-5.5, label="1 week", size=3, color="black",angle=90)+ 
+      annotate(geom="text", x=-2.8, y=-5.5, label="2 weeks", size=3, color="black",angle=90)+ 
+      annotate(geom="text", x=-3.6, y=-5.5, label="1 month", size=3, color="black",angle=90)+ 
+      annotate(geom="text", x=-6.2, y=-5.5, label="1 year", size=3, color="black",angle=90)+ylim(range(-5.8,1.2))
+    #add lines for 1 week, 2 week, month, year
+    
+  })
+  
+  #quilt plot
+  output$quiltPlot <- renderPlot({
+    
+    ggplot(theseSites() %>% group_by(lat, month) %>% summarise( max=max(MaxTemp_C), mean.max=mean(MaxTemp_C), q75= quantile(MaxTemp_C, 0.75), q95= quantile(MaxTemp_C, 0.95) ) 
+    ) + 
+      aes(x = month, y = as.factor(round(lat,2)) ) + 
+      geom_tile(aes(fill = mean.max)) + 
+      coord_equal()+
+      scale_fill_gradientn(colours = rev(heat.colors(10)), name="temperature (°C)" )+
+      #scale_fill_distiller(palette="Spectral", na.value="white", name="max temperature (°C)") + 
+      theme_classic(base_size = 18)+xlab("month")+ylab("latitude (°)")+ theme(legend.position="bottom")+ #+ coord_fixed(ratio = 4)
+      geom_hline(yintercept = 7.5, color="white", lwd=2) +
+      scale_x_continuous(breaks=seq(1,12,2))
+  })
+  
 })
+
+#---------------
+
+
+
+
+
+
+
+
+

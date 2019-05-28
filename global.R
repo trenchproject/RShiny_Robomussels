@@ -6,6 +6,8 @@ library(ggplot2)
 site.dat= read.csv("https://github.com/ajijohn/ClimateBiology/blob/master/data/musselREADME.csv")
 #Load robomussel data
 te.max <- readRDS("tedat.rds")
+#Load Fourier analysis data
+pow <- readRDS("powdat.rds")
 
 #Load meta for names
 te.meta <- read.csv("musselREADME.csv")
