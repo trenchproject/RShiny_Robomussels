@@ -61,12 +61,11 @@ shinyServer(function(input, output) {
   
  
   #fourier series plot
-  sites.sel= reactive(theseSites()[,c('site')])
-  powSites = reactive(pow)   #reactive(subset(pow, pow$site %in% sites.sel )) ###fix subsets
-  
+  powSites = reactive(subset(pow, pow$location %in% c(input$sites)))
+    
    output$ampPlot <- renderPlot({
     
-    ggplot(data=powSites(), aes(x=log(freq), y = log(cyc_range/2) ))+geom_line(alpha=0.8, aes(color=subsite)) +theme_classic()+ guides(color=FALSE, size=FALSE)+ facet_wrap(~labs, nrow=1)+
+    ggplot(data=powSites(), aes(x=log(freq), y = log(cyc_range/2) ))+geom_line(alpha=0.8, aes(color=subsite)) +theme_classic()+ guides(color=FALSE, size=FALSE)+ facet_wrap(~labs)+
       geom_vline(xintercept=-2.639, color="gray")+geom_vline(xintercept=-1.946, color="gray")+geom_vline(xintercept=-3.40, color="gray")+geom_vline(xintercept=-5.9, color="gray")+
       labs(x = "log (frequency) (1/days)",y="log (amplitude)")+
       annotate(geom="text", x=-2.1, y=-5.5, label="1 week", size=3, color="black",angle=90)+ 

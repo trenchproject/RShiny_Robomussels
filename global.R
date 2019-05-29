@@ -6,8 +6,6 @@ library(ggplot2)
 site.dat= read.csv("https://github.com/ajijohn/ClimateBiology/blob/master/data/musselREADME.csv")
 #Load robomussel data
 te.max <- readRDS("tedat.rds")
-#Load Fourier analysis data
-pow <- readRDS("powdat.rds")
 
 #Load meta for names
 te.meta <- read.csv("musselREADME.csv")
@@ -28,3 +26,12 @@ te.max<-subset(te.max, te.max$year==2002)
 #restrict to summer
 #May 1 through September: 121:273 
 te.max <-subset(te.max, te.max$doy>120 & te.max$doy<274)
+
+#Load Fourier analysis data
+pow <- readRDS("powdat.rds")
+#make site a factor
+pow$site= as.factor(pow$site)
+#add location
+locs=as.data.frame(te.max[!duplicated(te.max$site), ])
+pow$location= locs[match(pow$site, locs$site),'location']
+pow$location= pow$location
