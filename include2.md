@@ -17,4 +17,4 @@ Try answering the following questions:
 2. Look back at the map above and remind yourself how the sites line up along a latitudinal **gradient**:
     2.1 Which sites do you predict will experience the most extreme (highest) daily maxima—northern, southern, or central?
     2.2. After plotting all the sites, does your prediction hold true? Why or why not? (Hint: Consider [when low tides occur](https://tidesandcurrents.noaa.gov/tide_predictions.html) in different places.)
-    
+
