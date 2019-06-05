@@ -12,7 +12,7 @@ The interactive figures below allow you to plot the maximum daily temperatures r
 
 Try answering the following questions:
 
-1. Is there more variation in maximum daily temperature across sites, within sites, or across time? What could explain this?
+1. Is there more variation in maximum daily temperature across sites, within sites, or across time? What kinds of conditions could be different across sites, within sites, or across time that would explain what you see?
     
 2. Look back at the map above and remind yourself how the sites line up along a latitudinal **gradient**:         
      2.1 Which sites do you predict will experience the most extreme (highest) daily maxima—northern, southern, or central?         
