@@ -6,7 +6,7 @@ shinyUI(
   
   # Define UI
   fluidPage(  
-    title = "Roobomussel temperatures",
+    title = "Robomussel temperatures",
     fluidRow(
       column(12,
              includeMarkdown("include.md")
