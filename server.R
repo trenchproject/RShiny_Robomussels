@@ -55,7 +55,9 @@ shinyServer(function(input, output) {
   output$climbPlot <- renderPlot({
     
     ggplot(data=theseSites(), aes(x=doy, y = MaxTemp_C, color=subsite))+geom_line(alpha=0.8) +
-           theme_bw() + guides(color=FALSE)+labs(x = "Day of year",y="Maximum daily temperature (°C)") + facet_wrap(~location, ncol = 1)
+      theme_bw() + guides(color=FALSE)+labs(x = "Day of year",y="Maximum daily temperature (°C)") + facet_wrap(~location, ncol = 1) +
+      theme(strip.text = element_text(size = 11)) + 
+      theme(axis.text=element_text(size=11), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
     
   })
   
@@ -65,13 +67,16 @@ shinyServer(function(input, output) {
     
    output$ampPlot <- renderPlot({
     
-    ggplot(data=powSites(), aes(x=log(freq), y = log(cyc_range/2) ))+geom_line(alpha=0.8, aes(color=subsite)) +theme_classic()+ guides(color=FALSE, size=FALSE)+ facet_wrap(~labs)+
+    ggplot(data=powSites(), aes(x=log(freq), y = log(cyc_range/2) ))+geom_line(alpha=0.8, aes(color=subsite)) +theme_classic()+ guides(color=FALSE, size=FALSE)+ facet_wrap(~location)+
       geom_vline(xintercept=-2.639, color="gray")+geom_vline(xintercept=-1.946, color="gray")+geom_vline(xintercept=-3.40, color="gray")+geom_vline(xintercept=-5.9, color="gray")+
       labs(x = "log (frequency) (1/days)",y="log (amplitude)")+
-      annotate(geom="text", x=-2.1, y=-5.5, label="1 week", size=3, color="black",angle=90)+ 
-      annotate(geom="text", x=-2.8, y=-5.5, label="2 weeks", size=3, color="black",angle=90)+ 
-      annotate(geom="text", x=-3.6, y=-5.5, label="1 month", size=3, color="black",angle=90)+ 
-      annotate(geom="text", x=-6.2, y=-5.5, label="1 year", size=3, color="black",angle=90)+ylim(range(-5.8,1.2))
+      annotate(geom="text", x=-2.1, y=-5.5, label="1 week", size=4, color="black",angle=90)+ 
+      annotate(geom="text", x=-2.8, y=-5.5, label="2 weeks", size=4, color="black",angle=90)+ 
+      annotate(geom="text", x=-3.6, y=-5.5, label="1 month", size=4, color="black",angle=90)+ 
+      annotate(geom="text", x=-6.2, y=-5.5, label="1 year", size=4, color="black",angle=90)+ylim(range(-5.8,1.2)) +
+      theme(strip.text = element_text(size = 11)) + 
+      theme(axis.text=element_text(size=11), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
+     
     #add lines for 1 week, 2 week, month, year
     
   })
