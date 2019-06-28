@@ -56,8 +56,8 @@ shinyServer(function(input, output) {
     
     ggplot(data=theseSites(), aes(x=doy, y = MaxTemp_C, color=subsite))+geom_line(alpha=0.8) +
       theme_bw() + guides(color=FALSE)+labs(x = "Day of year",y="Maximum daily temperature (°C)") + facet_wrap(~location, ncol = 1) +
-      theme(strip.text = element_text(size = 11)) + 
-      theme(axis.text=element_text(size=11), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
+      theme(strip.text = element_text(size = 12)) + 
+      theme(axis.text=element_text(size=12), axis.title=element_text(size=13), legend.text=element_text(size=12), legend.title=element_text(size=12))
     
   })
   
@@ -74,8 +74,8 @@ shinyServer(function(input, output) {
       annotate(geom="text", x=-2.8, y=-5.5, label="2 weeks", size=4, color="black",angle=90)+ 
       annotate(geom="text", x=-3.6, y=-5.5, label="1 month", size=4, color="black",angle=90)+ 
       annotate(geom="text", x=-6.2, y=-5.5, label="1 year", size=4, color="black",angle=90)+ylim(range(-5.8,1.2)) +
-      theme(strip.text = element_text(size = 11)) + 
-      theme(axis.text=element_text(size=11), axis.title=element_text(size=12), legend.text=element_text(size=12), legend.title=element_text(size=12))
+      theme(strip.text = element_text(size = 12)) + 
+      theme(axis.text=element_text(size=12), axis.title=element_text(size=13), legend.text=element_text(size=12), legend.title=element_text(size=12))
      
     #add lines for 1 week, 2 week, month, year
     
@@ -91,8 +91,9 @@ shinyServer(function(input, output) {
       coord_equal()+
       scale_fill_gradientn(colours = rev(heat.colors(10)), name="temperature (°C)" )+
       #scale_fill_distiller(palette="Spectral", na.value="white", name="max temperature (°C)") + 
-      theme_classic(base_size = 18)+xlab("month")+ylab("latitude (°)")+ theme(legend.position="bottom")+ #+ coord_fixed(ratio = 4)
+      theme_classic(base_size = 18)+xlab("Month")+ylab("Latitude (°)")+ theme(legend.position="bottom")+ #+ coord_fixed(ratio = 4)
       geom_hline(yintercept = 7.5, color="white", lwd=2) +
+      theme(legend.key.width=unit(5, "line")) +
       scale_x_continuous(breaks=seq(1,12,2))
   })
   
