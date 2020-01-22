@@ -63,7 +63,7 @@ shinyUI(
     hr(),
     fluidRow(
       mainPanel(
-        plotOutput("quiltPlot", height="800px")  
+        plotOutput("quiltPlot", height="400px")  
       )),
     
     hr(),
