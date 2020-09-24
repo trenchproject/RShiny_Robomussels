@@ -32,4 +32,4 @@ Helmuth's approach was to use a tool called a **biomimetic** logger to collect t
 
 These "robomussels" were attached to rocks within existing mussel beds, surrounded by living mussels. Robomussels were also placed in multiple locations within sites, to capture the variable thermal conditions mussels experience as a result of differences in substrates, shading, and submersion. All this thermal variability would have been missed if Helmuth only looked at air temperatures collected by a nearby weather station. 
 
-The map below shows the locations at which robomussels were deployed along the Pacific Coast of North America, to capture the environments of mussel populations from Washington to Oregon. 
+The map below shows the locations at which robomussels were deployed along the Pacific Coast of North America, to capture the environments of mussel populations from Washington to Oregon.
