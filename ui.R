@@ -4,7 +4,6 @@ library(dplyr)
 library(reshape2)
 library(tidyr)
 library(ggplot2)
-library(tidyverse)
 
 #--------
 # Define UI 
