@@ -17,10 +17,8 @@ shinyServer(function(input, output) {
   
   output$map <- renderLeaflet({
     leaflet() %>%
-      addProviderTiles(providers$Stamen.Terrain,
-                       options = providerTileOptions(noWrap = TRUE)) %>% 
-      addCircleMarkers(data = points()) %>%
-      setView(lng = -120.214, lat = 34.47, zoom = 5.5)
+      addProviderTiles(providers$OpenStreetMap.Mapnik) %>% 
+      addCircleMarkers(data = points())
   })
   
   #times series plot
