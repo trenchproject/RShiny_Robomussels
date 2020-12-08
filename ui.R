@@ -12,7 +12,7 @@ shinyUI(
   # Define UI
   fluidPage(  
     title = "Robomussel temperatures",
-    includeMarkdown("include.md"),
+    includeHTML("include.html"),
     
     # Select sites and map
     sidebarLayout(
@@ -39,8 +39,8 @@ shinyUI(
     hr(),
     includeMarkdown("include3.md"),
     
-    hr(),
-    plotOutput("ampPlot", height = "800px"),
+    # hr(),
+    # plotOutput("ampPlot", height = "800px"),
     
     hr(),
     includeMarkdown("include4.md"),
@@ -49,7 +49,8 @@ shinyUI(
     plotOutput("quiltPlot", height = "400px"),
     
     hr(),
-    includeMarkdown("include5.md")
+    includeMarkdown("include5.md"),
+    br(), br()
   )
     
 ) #end shiny ui
