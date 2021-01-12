@@ -1,6 +1,6 @@
-# RShiny_robomussels
+# RShiny_Robomussels
 
-Rshiny_robomussels is an interactive shiny app that allows any user to visualize the operative temperatures of mussels on a microclimatic scale. The data are collected by ...
+Rshiny_Robomussels is an interactive shiny app that allows any user to visualize the operative temperatures of mussels on a microclimatic scale. The data are collected by ...
 and it emphasizes the importance of adjusting the temporal and spatial scale of data for the focal organisms. 
 
 ## Prerequisites for opening in Rstudio
@@ -18,7 +18,7 @@ lapply(pkgs, FUN = function(x) {
 )
 ```
 
-## Using RShiny_robomussels
+## Using RShiny_Robomussels
 * Opening in Rstudio:  
 Click on "Code" on the top right to copy the link to this repository.  
 Click ```File```, ```New Project```, ```Version Control```, ```Git```  
@@ -28,9 +28,9 @@ Paste the repository URL and click ```Create Project```.
 
 We have a google doc with questions to guide through the app for further understanding of the topic.
 
-## Contributing to RShiny_robomussels
+## Contributing to RShiny_Robomussels
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to PlasticityTradeoff, follow these steps:
+To contribute to RShiny_Robomussels, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
