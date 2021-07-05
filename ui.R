@@ -4,6 +4,7 @@ library(dplyr)
 library(reshape2)
 library(tidyr)
 library(ggplot2)
+library(shinyWidgets)
 
 #--------
 # Define UI 
@@ -11,7 +12,11 @@ shinyUI(
   
   # Define UI
   fluidPage(  
-    title = "Robomussel temperatures",
+    setBackgroundColor(color = "#C7DAE0"),
+    titlePanel(
+      div(tags$img(src="TrenchEdLogo.png", height = 150), 
+          "How Organisms Experience Climate Change")
+    ),
     includeHTML("include.html"),
     
     # Select sites and map
