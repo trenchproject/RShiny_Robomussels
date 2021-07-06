@@ -13,6 +13,7 @@ shinyUI(
   # Define UI
   fluidPage(  
     setBackgroundColor(color = "#C7DAE0"),
+    title="Robomussels",
     titlePanel(
       div(tags$img(src="TrenchEdLogo.png", height = 150), 
           "How Organisms Experience Climate Change")
