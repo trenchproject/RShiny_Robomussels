@@ -1,6 +1,6 @@
 # RShiny_Robomussels
 
-Rshiny_Robomussels is an interactive shiny app that allows any user to visualize the operative temperatures of mussels on a microclimatic scale. The [data](https://helmuthlab.cos.northeastern.edu/databases/robomussel/) are collected by Brian Helmuth and colleagues and it emphasizes the importance of adjusting the temporal and spatial scale of data for the focal organisms. 
+Rshiny_Robomussels is an interactive shiny app that allows any user to visualize the operative temperatures of mussels on a microclimatic scale. The [data](https://helmuthlab.cos.northeastern.edu/databases/robomussel/) are collected by Brian Helmuth and colleagues and the application emphasizes the importance of adjusting the temporal and spatial scale of data for the focal organisms. 
 
 ## Prerequisites for opening in Rstudio
 Git and Rstudio ([Instructions](https://resources.github.com/whitepapers/github-and-rstudio/))  
