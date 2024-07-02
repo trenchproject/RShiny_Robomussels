@@ -12,11 +12,12 @@ shinyUI(
   
   # Define UI
   fluidPage(  
-    setBackgroundColor(color = "#C7DAE0"),
+    setBackgroundColor(color = "white"),
+    tags$head(tags$link(rel="icon", type="image/x-icon", href="favicon.ico")),
     title="Robomussels",
     titlePanel(
-      div(tags$img(src="TrenchEdLogo.png", height = 150), 
-          "How Organisms Experience Climate Change")
+      div(tags$img(src="TrenchEdLogo.png", height = 70), 
+          "How Organisms Experience Climate Change", style = "font-size: 32px", align="Center"), 
     ),
     includeHTML("include.html"),
     

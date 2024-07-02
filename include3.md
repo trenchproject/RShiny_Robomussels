@@ -32,5 +32,3 @@ Bivalves are also "grown" by many different farmers who sell these mussels, clam
 This graph shows the number of native oysters that were caught annually from the mid-19th century to the mid-20th century. 
 
 Warming temperatures decrease the ability of bivalves to reproduce effectively, and they increase the amount of food bivalves have to eat. In addition, when water warms, it holds less oxygen. Bivalves do not do well in low-oxygen environments.  Another challenge caused by climate warming is ocean acidification, which makes it more difficult for bivalve larvae to survive and grow to be mature adults. Ocean acidification also damages the adult shells.
-
-<img src="robo_graph.png"/, height="400 px">
